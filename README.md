@@ -3,6 +3,24 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflections
+### Describe the effect of each P, I, D components. 
+####P - Proportion
+The proportional component of the controller takes a proportion of the cross track error into the calculation of the steering. This directs the car towards the centre.
+Kp * CTE
+
+####I - Integral
+The integral component of the controller addresses steering drift by taking a coefficient of the sum of all cross track errors. 
+Ki * Sum(all CTE)  
+
+####D - Differential 
+The differential component of the controller takes a difference of the current cross track error vs the previous cross track error reading, this offsets the challenges of the Proportional component causing an oscilating behavior.
+ 
+### Final Parameters
+I hand tuned the parameters for a throttle value of 0.4
+pid.Init(-0.1, 0, -2.0);
+
+
 ## Dependencies
 
 * cmake >= 3.5
